@@ -1,26 +1,27 @@
 import tkinter
 r = 0
+e = 1
 num = 0
 t = 16
 f = False
 def seven():
-    global num, t
+    global num, e
     print('Your score is adding.')
     num = num + 1
     print(num)
-    t = int(t /2)
+    e = e + 1
 
 
 def move():
     global r, t, f
-    if r == 900:
+    if r >= 900:
         f = True
-    if r == 0:
+    if r <= 0:
         f = False
     if f == False:
-        r=r+1
+        r=r+e
     if f == True:
-        r = r-1
+        r = r-e
     y.place(x = 100, y = r)
     root.after(t, move)
 root = tkinter.Tk()
