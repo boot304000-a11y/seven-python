@@ -1,21 +1,21 @@
 import tkinter
 r = 0
 num = 0
+t = 16
 def seven():
-    global num
-    if num < 3:
-        print('yay')
-        num = num + 1
-    if num == 3:
-        print('No')
-        print('Do not press again.')
+    global num, t
+    print('Your score is adding.')
+    num = num + 1
+    t = int(t /2)
+
+
 def move():
-    global r
+    global r, t
     r=r+1
     y.place(x = 100, y = r)
-    root.after(16, move)
+    root.after(t, move)
 root = tkinter.Tk()
-x= tkinter.Canvas(root, height = 500, width = 500)
+x= tkinter.Canvas(root, height = 1000, width = 500)
 x.pack()
 y = tkinter.Button(root, bg = 'red', height = 2, width = 20, command = seven)
 y.place(x = 100, y = r)
