@@ -1,0 +1,53 @@
+import tkinter
+r = 0
+s = 0
+y = 480
+z = 480
+def up(asdf):
+    global s, r
+    s=s - 3
+    b.place(x = r, y = s)
+def down(asdf):
+    global s, r
+    s=s + 3
+    b.place(x = r, y = s)
+def left(asdf):
+    global r, s
+    r=r - 3
+    b.place(x = r, y = s)
+def right(asdf):
+    global r, s
+    r=r + 3
+    b.place(x = r, y = s)
+def up_(asdf):
+    global y, z
+    z=z - 3
+    c.place(x = y, y = z)
+def down_(asdf):
+    global y, z
+    z=z + 3
+    c.place(x = y, y = z)
+def left_(asdf):
+    global y, z
+    y=y - 3
+    c.place(x = y, y = z)
+def right_(asdf):
+    global y, z
+    y=y + 3
+    c.place(x = y, y = z)
+root = tkinter.Tk()
+a = tkinter.Canvas(root, bg = 'red', height = 500, width = 500)
+a.pack()
+b = tkinter.Canvas(root, bg = 'green', width = 20, height = 20)
+b.place(x = r, y = s)
+c = tkinter.Canvas(root, bg = 'purple', width = 20, height = 20)
+c.place(x = y, y = z)
+root.bind('<Up>', up)
+root.bind('<Down>', down)
+root.bind('<Left>', left)
+root.bind('<Right>', right)
+root.bind('<w>', up_)
+root.bind('<s>', down_)
+root.bind('<a>', left_)
+root.bind('<d>', right_)
+root.mainloop()
