@@ -26,6 +26,9 @@ def right(asdf):
     r=r + 3
     if r > 480:
         r=r-3
+    if r + 30 > 365 and r + 30 < 385:
+            if s + 20 > 473:
+                r=r - 3
     b.place(x = r, y = s)
 def up_(asdf):
     global y, z
@@ -50,6 +53,9 @@ def right_(asdf):
     y=y + 3
     if y > 480:
         y=y-3
+    if y + 30 > 365 and y + 30 < 365 + 20:
+        if z + 20 > 473:
+            y=y - 3
     c.place(x = y, y = z)
 root = tkinter.Tk()
 a = tkinter.Canvas(root, bg = 'red', height = 500, width = 500)
