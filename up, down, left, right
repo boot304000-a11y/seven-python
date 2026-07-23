@@ -5,6 +5,7 @@ s = 0
 y = 480
 z = 480
 def slip():
+    global r, s
     if r == 30 and s == 300:
         x = random.randint(1, 4)
         if x == 1:
