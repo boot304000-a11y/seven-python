@@ -1,8 +1,20 @@
 import tkinter
+import random
 r = 0
 s = 0
 y = 480
 z = 480
+def slip():
+    if r == 30 and s == 300:
+        x = random.randint(1, 4)
+        if x == 1:
+            r = 0
+        if x == 2:
+            r = 500
+        if x == 3:
+            s = 0
+        if x == 4:
+            s = 500
 def up(asdf):
     global s, r
     s=s - 3
@@ -82,6 +94,9 @@ e.place(x = 127, y = 364)
 f = tkinter.PhotoImage(file = "C:\\Users\\User\\Desktop\\seven-python\\stone.peek.png")
 g = tkinter.Label(root, image = f, border = 0)
 g.place(x = 356, y = 473)
+h = tkinter.PhotoImage(file = "C:\\Users\\User\\Desktop\\seven-python\\Button.png")
+i = tkinter.Button(root, image = h, width = 20, height = 20, border = 0, command = slip)
+i.place(x = 30, y = 300)
 root.bind('<Up>', up)
 root.bind('<Down>', down)
 root.bind('<Left>', left)
