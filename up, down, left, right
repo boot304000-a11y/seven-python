@@ -6,16 +6,26 @@ y = 480
 z = 480
 def slip():
     global r, s
+    x = random.randint(1, 4)
     if r == 30 and s == 300:
-        x = random.randint(1, 4)
         if x == 1:
             r = 0
         if x == 2:
-            r = 500
+            r = 480
         if x == 3:
             s = 0
         if x == 4:
-            s = 500
+            s = 480
+    if y == 30 and z == 300:
+        if x == 1:
+            y = 0
+        if x == 2:
+            y = 480
+        if x == 3:
+            z = 0
+        if x == 4:
+            x = 480        
+    b.place(x = r, y = s)
 def up(asdf):
     global s, r
     s=s - 3
