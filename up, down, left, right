@@ -107,7 +107,7 @@ f = tkinter.PhotoImage(file = "C:\\Users\\User\\Desktop\\seven-python\\stone.pee
 g = tkinter.Label(root, image = f, border = 0)
 g.place(x = 356, y = 473)
 h = tkinter.PhotoImage(file = "C:\\Users\\User\\Desktop\\seven-python\\Button.png")
-i = tkinter.Button(root, image = h, width = 20, height = 20, command = slip, border = 0)
+i = tkinter.Button(root, image = h, width = 24, height = 24, command = slip, border = 0, highlightthickness= 0)
 i.place(x = 30, y = 300)
 root.bind('<Up>', up)
 root.bind('<Down>', down)
