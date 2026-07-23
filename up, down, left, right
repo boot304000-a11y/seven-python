@@ -14,12 +14,18 @@ def down(asdf):
     s=s + 3
     if s > 480:
         s=s-3
+    if s + 30 > 473 and s + 30 < 500:
+                if r + 30 > 360 and r + 20< 395:
+                    s=s - 3
     b.place(x = r, y = s)
 def left(asdf):
     global r, s
     r=r - 3
     if r < 0:
         r=r+3
+    if r + 20 > 365 and r + 20 < 395:
+        if s + 20 > 473:
+            r=r + 3
     b.place(x = r, y = s)
 def right(asdf):
     global r, s
@@ -41,12 +47,18 @@ def down_(asdf):
     z=z + 3
     if z > 480:
         z=z-3
+    if z + 30 > 473 and z + 30 < 500:
+        if y + 30 > 360 and y + 20< 395:
+            z=z - 3
     c.place(x = y, y = z)
 def left_(asdf):
     global y, z
     y=y - 3
     if y < 0:
         y=y+3
+    if y + 20 > 365 and y + 20 < 395:
+        if z + 20 > 473:
+             y=y + 3
     c.place(x = y, y = z)
 def right_(asdf):
     global y, z
