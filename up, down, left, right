@@ -5,7 +5,7 @@ s = 0
 y = 480
 z = 480
 def slip():
-    global r, s
+    global r, s, y, z
     x = random.randint(1, 4)
     if r == 30 and s == 300:
         if x == 1:
@@ -24,7 +24,8 @@ def slip():
         if x == 3:
             z = 0
         if x == 4:
-            x = 480        
+            x = 480  
+    c.place(x = y, y = z)      
     b.place(x = r, y = s)
 def up(asdf):
     global s, r
@@ -106,7 +107,7 @@ f = tkinter.PhotoImage(file = "C:\\Users\\User\\Desktop\\seven-python\\stone.pee
 g = tkinter.Label(root, image = f, border = 0)
 g.place(x = 356, y = 473)
 h = tkinter.PhotoImage(file = "C:\\Users\\User\\Desktop\\seven-python\\Button.png")
-i = tkinter.Button(root, image = h, width = 20, height = 20, border = 0, command = slip)
+i = tkinter.Button(root, image = h, width = 20, height = 20, command = slip, border = 0)
 i.place(x = 30, y = 300)
 root.bind('<Up>', up)
 root.bind('<Down>', down)
