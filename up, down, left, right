@@ -7,6 +7,7 @@ z = 480
 def slip():
     global r, s, y, z
     x = random.randint(1, 4)
+    a = random.randint(1, 4)
     if r == 30 and s == 300:
         if x == 1:
             r = 0
@@ -17,13 +18,13 @@ def slip():
         if x == 4:
             s = 480
     if y == 30 and z == 300:
-        if x == 1:
+        if a == 1:
             y = 0
-        if x == 2:
+        if a == 2:
             y = 480
-        if x == 3:
+        if a == 3:
             z = 0
-        if x == 4:
+        if a == 4:
             x = 480  
     c.place(x = y, y = z)      
     b.place(x = r, y = s)
@@ -32,6 +33,9 @@ def up(asdf):
     s=s - 3
     if s < 0:
         s=s+3
+    if s + 30 > 453 and s < 453:
+                if r + 20 > 365 and r < 365 + 10:
+                    s=s - 3
     b.place(x = r, y = s)
 def down(asdf):
     global s, r
@@ -65,12 +69,18 @@ def up_(asdf):
     z=z - 3
     if z < 0:
         z=z+3
+    if z + 30 > 453 and z < 453:
+        if y + 20 > 365 and y < 365 + 10:
+            z=z - 3
     c.place(x = y, y = z)
 def down_(asdf):
     global y, z
     z=z + 3
     if z > 480:
         z=z-3
+    if z + 30 > 453 and z + 30 < 483:
+            if y + 30 > 371 and y + 20< 406:
+                z=z - 3
     if z + 30 > 473 and z + 30 < 500:
         if y + 30 > 360 and y + 20< 395:
             z=z - 3
@@ -83,6 +93,9 @@ def left_(asdf):
     if y + 20 > 365 and y + 20 < 395:
         if z + 20 > 473:
              y=y + 3
+    if y + 20 > 376 and y + 20 < 406:
+            if z + 20 > 453 and z < 453:
+                 y=y + 3
     c.place(x = y, y = z)
 def right_(asdf):
     global y, z
@@ -92,6 +105,9 @@ def right_(asdf):
     if y + 30 > 365 and y + 30 < 365 + 20:
         if z + 20 > 473:
             y=y - 3
+    if y + 30 > 376 and y + 30 < 376 + 20:
+            if z + 20 > 453:
+                y=y - 3
     c.place(x = y, y = z)
 root = tkinter.Tk()
 a = tkinter.Canvas(root, bg = 'red', height = 500, width = 500)
@@ -109,6 +125,8 @@ g.place(x = 356, y = 473)
 h = tkinter.PhotoImage(file = "C:\\Users\\User\\Desktop\\seven-python\\Button.png")
 i = tkinter.Button(root, image = h, width = 24, height = 24, command = slip, border = 0, highlightthickness= 0)
 i.place(x = 30, y = 300)
+j = tkinter.Label(root, image = f, border = 0)
+j.place(x = 365, y = 453)
 root.bind('<Up>', up)
 root.bind('<Down>', down)
 root.bind('<Left>', left)
